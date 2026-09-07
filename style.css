@@ -202,7 +202,7 @@ footer { background: var(--dark); padding: 64px 60px 32px; }
 .detail-photo-large {
   position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 0;
 }
-.detail-photo-large img { width: 100%; display: block; border-radius: 16px; }
+.detail-photo-large img { width: 100%; display: block; border-radius: 16px; max-height: 400px; object-fit: cover; object-position: center; }
 .detail-photo-label {
   position: absolute; bottom: 16px; left: 16px;
   background: rgba(253,252,249,0.92); border-radius: 10px;
