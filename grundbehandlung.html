@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grundbehandlung — Schiefer Kosmetik Flein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Schiefer Kosmetik</a>
+  <ul class="nav-links"><li><a href="behandlungen.html" class="active">Gesicht / Augen / Make-up</a></li>
+    <li><a href="guinot.html" >Guinot Behandlungen</a></li>
+    <li><a href="koerper.html" >Körper</a></li>
+    <li><a href="preisliste.html" >Preisliste</a></li>
+    <li><a href="shop.html" >Shop</a></li>
+    <li><a href="kontakt.html" >Kontakt</a></li></ul>
+  <a href="kontakt.html" class="btn-nav">Behandlung finden</a>
+</nav>
+
+<div class="detail-hero">
+  <div class="detail-hero-img" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80');"></div>
+  <div class="detail-hero-content">
+    <a href="behandlungen.html" class="back-link">← Behandlungen</a>
+    <div class="detail-eyebrow">Gesicht / Hals / Dekolleté</div>
+    <h1>Grundbehandlung</h1>
+  </div>
+</div>
+<div class="detail-grid">
+  <div class="up">
+    <h2 class="detail-sec-title">Behandlungsziel</h2>
+    <p class="detail-text">Eine strahlend schöne Haut und jugendliches Aussehen. Geeignet für Damen und Herren jeden Alters. Empfohlener Behandlungsrhythmus: alle 4–6 Wochen.</p>
+    <h2 class="detail-sec-title">Leistungsumfang</h2>
+    <ul class="detail-list">
+      <li>Gründliche Reinigung</li><li>Peeling</li><li>Serum</li>
+      <li>Gesichtsmassage</li><li>Hauttyp-spezifische Maske</li><li>Abschlusspflege</li>
+    </ul>
+    <p class="detail-text">Die Behandlung kann mit Spezialbehandlungen und Ampullen erweitert werden. Auf Wunsch auch Ausreinigung von Komedonen möglich.</p>
+  </div>
+  <div class="up">
+    <div class="detail-photo-large" style="margin-bottom:20px;">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80" alt="Grundbehandlung">
+      <div class="detail-photo-dur">60 min</div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Behandlungsinfo</div>
+      <div class="sidebar-row"><span class="sidebar-row-label">Dauer</span><span class="sidebar-row-val">ca. 60 Min.</span></div>
+<div class="sidebar-row"><span class="sidebar-row-label">Geeignet für</span><span class="sidebar-row-val">Damen & Herren</span></div>
+<div class="sidebar-row"><span class="sidebar-row-label">Rhythmus</span><span class="sidebar-row-val">alle 4–6 Wochen</span></div>
+<div class="sidebar-row"><span class="sidebar-row-label">Preis</span><span class="sidebar-row-val">ab 85 €</span></div>
+    </div>
+    <div class="sidebar-card" style="margin-top:12px;">
+      <div class="sidebar-title">Termin vereinbaren</div>
+      <p style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:14px;">Rufen Sie uns an oder schreiben Sie uns.</p>
+      <a href="kontakt.html" class="btn-dark" style="display:inline-flex;font-size:13px;padding:10px 18px;">Termin anfragen →</a>
+      <p style="font-size:12px;color:var(--mid);margin-top:10px;font-weight:300;"><strong style="color:var(--dark);">07131 / 6187070</strong></p>
+    </div>
+    
+  </div>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Schiefer Kosmetik</div>
+      <p class="footer-desc">Ihr Kosmetikinstitut in Flein bei Heilbronn. Hochwertige Gesichts- und Körperbehandlungen mit Guinot und Valmont.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Behandlungen</div>
+      <a href="behandlungen.html">Gesicht / Make-up</a>
+      <a href="guinot.html">Guinot Behandlungen</a>
+      <a href="koerper.html">Körper</a>
+      <a href="preisliste.html">Preisliste</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Öffnungszeiten</div>
+      <p>Mo–Do 08:00–17:00 Uhr</p>
+      <p>Fr 08:00–13:00 Uhr</p>
+      <p>Behandlungen nach Vereinbarung</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Kontakt</div>
+      <p>Talheimer Str. 32, 74223 Flein</p>
+      <a href="tel:+4971316187070">07131 / 6187070</a>
+      <a href="mailto:info@schiefer-kosmetik.de">info@schiefer-kosmetik.de</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Schiefer Kosmetik e.K. · Talheimer Str. 32, 74223 Flein bei Heilbronn</span>
+    <div style="display:flex;gap:16px;"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </div>
+</footer>
+<script>
+const obs = new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('show'),i*80)});},{threshold:0.06});
+document.querySelectorAll('.up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

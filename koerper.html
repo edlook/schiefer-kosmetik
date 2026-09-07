@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Körper — Schiefer Kosmetik Flein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --bg: #f7f5f0; --bg2: #efeee9; --card: #fdfcf9; --dark: #1e2b24;
+  --mid: #4e5a52; --muted: #8a9189; --accent: #a94826;
+  --border: #dcd7ca; --border2: #e7e4db; --white: #fdfcf9;
+}
+body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; background: rgba(247,245,240,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; }
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--dark); text-decoration: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--dark); font-weight: 500; }
+.btn-nav { background: var(--dark); color: var(--white); padding: 10px 22px; border-radius: 12px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background .2s; }
+.btn-nav:hover { background: var(--mid); }
+.hero { min-height: 100vh; padding-top: 64px; display: grid; grid-template-columns: 1fr 1fr; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+.hero h1 { font-family: ui-serif, Georgia, serif; font-size: clamp(44px,5vw,66px); font-weight: 400; line-height: 1.1; color: var(--dark); margin-bottom: 24px; }
+.hero h1 em { font-style: italic; }
+.hero-p { font-size: 16px; color: var(--mid); font-weight: 300; line-height: 1.85; max-width: 420px; margin-bottom: 40px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--dark); color: var(--white); padding: 13px 24px; border-radius: 12px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s; }
+.btn-dark:hover { background: var(--mid); }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--dark); padding: 13px 24px; border-radius: 12px; border: 1.5px solid var(--border); font-size: 14px; font-weight: 400; text-decoration: none; }
+.btn-outline:hover { border-color: var(--dark); }
+.hero-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-badge { position: absolute; bottom: 40px; left: -16px; background: var(--white); border-radius: 14px; padding: 18px 22px; box-shadow: 0 8px 40px rgba(30,43,36,0.12); max-width: 280px; }
+.hero-badge-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.hero-badge-text { font-family: ui-serif, Georgia, serif; font-size: 16px; color: var(--dark); margin-bottom: 8px; }
+.hero-badge-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; padding: 3px 10px; border-radius: 20px; }
+.sec { padding: 96px 60px; }
+.eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.sec-h { font-family: ui-serif, Georgia, serif; font-size: clamp(32px,4vw,48px); font-weight: 400; color: var(--dark); line-height: 1.15; }
+.sec-h em { font-style: italic; }
+.sec-p { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.85; }
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
+.overview-group-title { font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 400; color: var(--dark); margin-bottom: 4px; }
+.overview-group-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.beh-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-start; transition: box-shadow .2s; text-decoration: none; }
+.beh-card:hover { box-shadow: 0 4px 20px rgba(30,43,36,0.08); }
+.beh-card-name { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+.beh-card-desc { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.5; }
+.beh-card-meta { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.beh-card-right { flex-shrink: 0; margin-left: 16px; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.beh-card-price { font-size: 14px; color: var(--dark); font-weight: 500; white-space: nowrap; }
+.beh-card-arrow { font-size: 18px; color: var(--accent); }
+.detail-hero { padding-top: 64px; min-height: 46vh; position: relative; display: flex; align-items: flex-end; overflow: hidden; background: var(--dark); }
+.detail-hero-img { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.4; }
+.detail-hero-content { position: relative; z-index: 2; padding: 0 60px 56px; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: #fff; }
+.detail-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.detail-hero h1 { font-family: ui-serif, Georgia, serif; font-size: clamp(36px,5vw,56px); font-weight: 400; color: #fff; line-height: 1.1; }
+.detail-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 56px; padding: 72px 60px; background: var(--bg); }
+.detail-sec-title { font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 400; color: var(--dark); margin-bottom: 14px; }
+.detail-text { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.9; margin-bottom: 20px; }
+.detail-list { list-style: none; margin-bottom: 24px; }
+.detail-list li { font-size: 15px; color: var(--mid); font-weight: 300; padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+.detail-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.sidebar-card { background: var(--white); border-radius: 16px; border: 1px solid var(--border); padding: 26px; margin-bottom: 14px; }
+.sidebar-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.sidebar-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.sidebar-row:last-child { border-bottom: none; }
+.sidebar-row-label { color: var(--muted); font-weight: 300; }
+.sidebar-row-val { color: var(--dark); font-weight: 500; }
+.tag { display: inline-block; font-size: 11px; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); color: var(--mid); margin: 2px; }
+.preis-section { margin-bottom: 48px; }
+.preis-section-h { font-family: ui-serif, Georgia, serif; font-size: 24px; font-weight: 400; color: var(--dark); margin-bottom: 4px; }
+.preis-section-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.preis-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.preis-row:last-child { border-bottom: none; }
+.preis-row-name { font-size: 15px; color: var(--dark); flex: 1; }
+.preis-row-dur { font-size: 13px; color: var(--muted); font-weight: 300; flex-shrink: 0; }
+.preis-row-price { font-size: 15px; color: var(--dark); font-weight: 600; flex-shrink: 0; min-width: 80px; text-align: right; }
+.preis-note { font-size: 13px; color: var(--muted); font-weight: 300; padding-top: 20px; border-top: 1px solid var(--border); line-height: 1.7; }
+.kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.kontakt-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+.kontakt-icon { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; font-size: 16px; }
+.kontakt-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.kontakt-val { font-size: 15px; color: var(--dark); }
+.kontakt-val a { color: var(--dark); text-decoration: none; }
+.hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.hours-row:last-child { border-bottom: none; }
+.kontakt-form { background: var(--white); border-radius: 16px; border: 1px solid var(--border); padding: 36px; }
+.form-title { font-family: ui-serif, Georgia, serif; font-size: 24px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
+.form-sub { font-size: 14px; color: var(--muted); font-weight: 300; margin-bottom: 24px; }
+.f-group { margin-bottom: 14px; }
+.f-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; display: block; }
+.f-input, .f-select, .f-textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--dark); padding: 12px 14px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color .2s; appearance: auto; }
+.f-input:focus, .f-select:focus, .f-textarea:focus { border-color: var(--dark); }
+.f-textarea { resize: vertical; min-height: 90px; }
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.f-submit { width: 100%; background: var(--dark); color: var(--white); border: none; border-radius: 12px; padding: 14px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 8px; transition: background .2s; }
+.f-submit:hover { background: var(--mid); }
+.map-wrap { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin-top: 24px; }
+footer { background: var(--dark); padding: 64px 60px 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-logo { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 300; line-height: 1.8; }
+.footer-col-title { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+.footer-col a, .footer-col p { display: block; font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; font-weight: 300; margin-bottom: 8px; line-height: 1.5; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.2); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-bottom a { color: rgba(255,255,255,0.2); text-decoration: none; }
+.up { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.up.show { opacity: 1; transform: translateY(0); }
+@media(max-width:960px) {
+  nav { padding: 0 20px; } .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; } .hero-left { padding: 80px 20px 52px; } .hero-right { height: 60vw; }
+  .sec { padding: 64px 20px; }
+  .overview-grid, .detail-grid, .kontakt-grid { grid-template-columns: 1fr; gap: 32px; }
+  .f-row { grid-template-columns: 1fr; }
+  footer { padding: 48px 20px 24px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .detail-hero-content, .detail-grid { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ARCH PHOTO - like reference */
+.arch-photo {
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+  width: 100%;
+}
+.arch-photo img { width: 100%; display: block; }
+
+/* HERO PHOTO with arch */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 0 0 0;
+  background: var(--bg);
+}
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+.hero-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 200px 200px 0 0;
+  display: block;
+}
+.hero-photo-badge {
+  position: absolute;
+  bottom: -1px;
+  left: 24px;
+  right: 24px;
+  background: var(--white);
+  border-radius: 16px 16px 0 0;
+  padding: 20px 24px;
+  box-shadow: 0 -4px 20px rgba(30,43,36,0.06);
+}
+.hero-photo-badge-eyebrow {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 4px;
+}
+.hero-photo-badge-text {
+  font-family: ui-serif, Georgia, serif; font-size: 16px; color: var(--dark);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hero-photo-badge-tag {
+  background: var(--accent); color: #fff;
+  font-size: 11px; padding: 4px 12px; border-radius: 20px;
+}
+
+/* BEHANDLUNG DETAIL CARDS - right side mini cards */
+.beh-mini-card {
+  background: var(--white); border-radius: 14px; border: 1px solid var(--border);
+  padding: 16px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start;
+  text-decoration: none; transition: box-shadow .2s;
+}
+.beh-mini-card:hover { box-shadow: 0 4px 20px rgba(30,43,36,0.08); }
+.beh-mini-thumb {
+  width: 72px; height: 72px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+  position: relative;
+}
+.beh-mini-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.beh-mini-thumb-dur {
+  position: absolute; bottom: 4px; left: 4px;
+  background: rgba(30,43,36,0.75); color: #fff;
+  font-size: 9px; padding: 2px 6px; border-radius: 6px;
+}
+.beh-mini-info { flex: 1; }
+.beh-mini-eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.beh-mini-name { font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 6px; }
+.beh-mini-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
+.beh-mini-tag { font-size: 10px; padding: 2px 8px; border-radius: 20px; border: 1px solid var(--border); color: var(--mid); }
+.beh-mini-desc { font-size: 12px; color: var(--muted); font-weight: 300; line-height: 1.5; margin-bottom: 10px; }
+.beh-mini-price { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
+.beh-mini-btns { display: flex; gap: 8px; }
+.beh-mini-btn-outline { font-size: 11px; color: var(--mid); text-decoration: none; padding: 5px 12px; border: 1px solid var(--border); border-radius: 8px; }
+.beh-mini-btn-dark { font-size: 11px; color: #fff; background: var(--dark); text-decoration: none; padding: 5px 12px; border-radius: 8px; }
+
+/* LARGE DETAIL PHOTO - left side */
+.detail-photo-large {
+  position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 0;
+}
+.detail-photo-large img { width: 100%; display: block; border-radius: 16px; }
+.detail-photo-label {
+  position: absolute; bottom: 16px; left: 16px;
+  background: rgba(253,252,249,0.92); border-radius: 10px;
+  padding: 10px 16px;
+}
+.detail-photo-label-name { font-size: 14px; font-weight: 500; color: var(--dark); }
+.detail-photo-label-meta { font-size: 12px; color: var(--muted); }
+.detail-photo-dur {
+  position: absolute; bottom: 16px; right: 16px;
+  background: var(--dark); color: #fff; border-radius: 10px;
+  padding: 8px 14px; font-size: 12px; font-weight: 500;
+}
+
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Schiefer Kosmetik</a>
+  <ul class="nav-links">
+    <li><a href="behandlungen.html" >Gesicht / Augen / Make-up</a></li>
+    <li><a href="guinot.html" >Guinot Behandlungen</a></li>
+    <li><a href="koerper.html" class="active">Körper</a></li>
+    <li><a href="preisliste.html" >Preisliste</a></li>
+    <li><a href="shop.html" style="color:var(--accent);" class="">Shop</a></li>
+    <li><a href="kontakt.html" >Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="btn-nav">Behandlung finden</a>
+</nav>
+
+<div class="detail-hero">
+  <div class="detail-hero-img" style="background-image:url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600&q=80');"></div>
+  <div class="detail-hero-content">
+    <a href="index.html" class="back-link">← Startseite</a>
+    <div class="detail-eyebrow">Guinot TechniSpa</div>
+    <h1>Körperbehandlungen</h1>
+  </div>
+</div>
+<section class="sec">
+  <div class="up" style="max-width:700px;margin-bottom:56px;">
+    <p class="sec-p">Guinot TechniSpa Körperbehandlungen zur Unterstützung von Silhouette, Festigkeit und einem leichteren Beingefühl. Die Methode TechniSpa verbindet drei Technologien mit hochwirksamen Wirkstoffen für sicht- und messbare Ergebnisse.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr;gap:8px;" class="up">
+    <a href="anti-cellulite.html" class="beh-card">
+      <div class="beh-card-left">
+        <div class="beh-card-name">Körperbehandlungen mit der Methode Guinot TechniSpa</div>
+        <div class="beh-card-desc">Apparative Körperpflege mit Vakuum-Massage, Ionisierung und Muskelstimulation.</div>
+        <div class="beh-card-meta">ca. 50 Minuten</div>
+      </div>
+      <div class="beh-card-right"><div class="beh-card-price">auf Anfrage</div><span class="beh-card-arrow">→</span></div>
+    </a>
+    <a href="anti-cellulite.html" class="beh-card">
+      <div class="beh-card-left">
+        <div class="beh-card-name">Anti-Cellulite Behandlung</div>
+        <div class="beh-card-desc">Mobilisiert eingelagerte Fette, glättet das Hautbild und verfeinert die Silhouette. Ideal auch unterstützend bei Gewichtsreduzierung.</div>
+        <div class="beh-card-meta">ca. 50 Minuten</div>
+      </div>
+      <div class="beh-card-right"><div class="beh-card-price">auf Anfrage</div><span class="beh-card-arrow">→</span></div>
+    </a>
+    <a href="thermo-relax.html" class="beh-card">
+      <div class="beh-card-left">
+        <div class="beh-card-name">Thermo Relax Behandlung für Festigkeit</div>
+        <div class="beh-card-desc">Straffende Behandlung mit Aktiserum Thermo-Relax für Oberschenkel, Bauch, Rücken und Arme.</div>
+        <div class="beh-card-meta">ca. 50 Minuten</div>
+      </div>
+      <div class="beh-card-right"><div class="beh-card-price">auf Anfrage</div><span class="beh-card-arrow">→</span></div>
+    </a>
+    <a href="thermo-relax.html" class="beh-card">
+      <div class="beh-card-left">
+        <div class="beh-card-name">Thermo Relax Behandlung – Leichte Beine</div>
+        <div class="beh-card-desc">Drainierende Pflege mit Lymphaktivierung und Komfort für häufiges Stehen oder Sitzen. Erleichtert schwere, müde Beine.</div>
+        <div class="beh-card-meta">ca. 35 Minuten</div>
+      </div>
+      <div class="beh-card-right"><div class="beh-card-price">auf Anfrage</div><span class="beh-card-arrow">→</span></div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Schiefer Kosmetik</div>
+      <p class="footer-desc">Ihr Kosmetikinstitut in Flein bei Heilbronn. Hochwertige Gesichts- und Körperbehandlungen mit Guinot und Valmont.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Behandlungen</div>
+      <a href="behandlungen.html">Gesicht / Make-up</a>
+      <a href="guinot.html">Guinot Behandlungen</a>
+      <a href="koerper.html">Körper</a>
+      <a href="preisliste.html">Preisliste</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Öffnungszeiten</div>
+      <p>Mo–Fr 08:00–17:00 Uhr</p>
+      <p>Fr 08:00–13:00 Uhr</p>
+      <p>Behandlungen nach Vereinbarung</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Kontakt</div>
+      <p>Talheimer Str. 32, 74223 Flein</p>
+      <a href="tel:+4971316187070">07131 / 6187070</a>
+      <a href="mailto:info@schiefer-kosmetik.de">info@schiefer-kosmetik.de</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Schiefer Kosmetik e.K. · Talheimer Str. 32, 74223 Flein bei Heilbronn</span>
+    <div style="display:flex;gap:16px;"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </div>
+</footer>
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('show'),i*80); });
+}, {threshold:0.06});
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+</script>
+</body>
+</html>

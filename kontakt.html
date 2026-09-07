@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Schiefer Kosmetik Flein</title>
+      
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Schiefer Kosmetik</a>
+  <ul class="nav-links">
+    <li><a href="behandlungen.html" >Gesicht / Augen / Make-up</a></li>
+    <li><a href="guinot.html" >Guinot Behandlungen</a></li>
+    <li><a href="koerper.html" >Körper</a></li>
+    <li><a href="preisliste.html" >Preisliste</a></li>
+    <li><a href="shop.html" style="color:var(--accent);" class="">Shop</a></li>
+    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="btn-nav">Behandlung finden</a>
+</nav>
+
+<div style="padding-top:64px;background:var(--dark);min-height:200px;display:flex;align-items:flex-end;">
+  <div style="padding:0 60px 48px;">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">Kontakt</div>
+    <h1 style="font-family:ui-serif,Georgia,serif;font-size:clamp(36px,5vw,54px);font-weight:400;color:#fff;">Termin <em style="font-style:italic;">vereinbaren</em></h1>
+  </div>
+</div>
+<section class="sec">
+  <div class="kontakt-grid">
+    <div class="up">
+      <div class="kontakt-row">
+        <div class="kontakt-icon">📍</div>
+        <div><div class="kontakt-label">Adresse</div><div class="kontakt-val">Talheimer Str. 32<br>74223 Flein bei Heilbronn</div></div>
+      </div>
+      <div class="kontakt-row">
+        <div class="kontakt-icon">📞</div>
+        <div><div class="kontakt-label">Telefon</div><div class="kontakt-val"><a href="tel:+4971316187070">07131 / 6187070</a></div></div>
+      </div>
+      <div class="kontakt-row">
+        <div class="kontakt-icon">✉️</div>
+        <div><div class="kontakt-label">E-Mail</div><div class="kontakt-val"><a href="mailto:info@schiefer-kosmetik.de">info@schiefer-kosmetik.de</a></div></div>
+      </div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid var(--border);padding:24px;margin-bottom:20px;">
+        <div class="kontakt-label" style="margin-bottom:14px;">Öffnungszeiten</div>
+        <div class="hours-row"><span style="color:var(--mid);font-weight:300;">Montag – Freitag</span><span style="color:var(--dark);">08:00 – 17:00 Uhr</span></div>
+        <div class="hours-row"><span style="color:var(--mid);font-weight:300;">Freitag</span><span style="color:var(--dark);">08:00 – 13:00 Uhr</span></div>
+        <div class="hours-row" style="border-bottom:none;"><span style="color:var(--mid);font-weight:300;">Behandlungstermine</span><span style="color:var(--dark);">nach Vereinbarung</span></div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.5!2d9.1513!3d49.1082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797f7c4c4c4c4c4%3A0x0!2sTalheimer%20Str.%2032%2C%2074223%20Flein!5e0!3m2!1sde!2sde!4v1234" width="100%" height="260" style="border:none;display:block;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="kontakt-form up">
+      <div class="form-title">Terminanfrage</div>
+      <div class="form-sub">Wir melden uns zeitnah zur Terminbestätigung. Keine Vorauszahlung erforderlich.</div>
+      <form id="cForm" action="https://formspree.io/f/xojrqadk" method="POST">
+        <input type="hidden" name="_subject" value="Terminanfrage – Schiefer Kosmetik Flein">
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">Ihr Name *</label><input class="f-input" type="text" name="name" placeholder="Vorname Nachname" required></div>
+          <div class="f-group"><label class="f-label">Telefon *</label><input class="f-input" type="tel" name="phone" placeholder="07131 ..." required></div>
+        </div>
+        <div class="f-group"><label class="f-label">E-Mail</label><input class="f-input" type="email" name="email" placeholder="ihre@email.de"></div>
+        <div class="f-group">
+          <label class="f-label">Gewünschte Behandlung</label>
+          <select class="f-select" name="service">
+            <option>Bitte wählen...</option>
+            <optgroup label="Gesicht"><option>Grundbehandlung</option><option>Herrenbehandlung</option><option>Jugendliche, pubertäre Haut</option><option>Make-up</option></optgroup>
+            <optgroup label="Guinot"><option>Guinot Hydraderm Lift</option><option>Guinot Hydra Peeling PH</option><option>Guinot Lift Summum</option><option>Guinot Age Summum</option><option>Guinot Hydraderm Cellular Energy</option></optgroup>
+            <optgroup label="Valmont"><option>Luminosity (Valmont)</option><option>Lifting (Valmont)</option><option>Firmness (Valmont)</option><option>Kleine Valmont Schnupperbehandlung</option></optgroup>
+            <optgroup label="Körper"><option>Anti-Cellulite Behandlung</option><option>Thermo Relax – Festigkeit</option><option>Thermo Relax – Leichte Beine</option></optgroup>
+          </select>
+        </div>
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">Wunschdatum</label><input class="f-input" type="date" name="date" id="wd"></div>
+          <div class="f-group"><label class="f-label">Wunschuhrzeit</label><select class="f-select" name="time"><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select></div>
+        </div>
+        <div class="f-group"><label class="f-label">Anmerkungen</label><textarea class="f-textarea" name="message" placeholder="Besondere Wünsche oder Hinweise..."></textarea></div>
+        <button type="submit" class="f-submit">Termin anfragen</button>
+        <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-weight:300;">Wir bestätigen Ihren Termin persönlich. Keine Vorauszahlung.</div>
+        <div id="fMsg" style="display:none;padding:10px;margin-top:10px;text-align:center;border-radius:8px;font-size:13px;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Schiefer Kosmetik</div>
+      <p class="footer-desc">Ihr Kosmetikinstitut in Flein bei Heilbronn. Hochwertige Gesichts- und Körperbehandlungen mit Guinot und Valmont.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Behandlungen</div>
+      <a href="behandlungen.html">Gesicht / Make-up</a>
+      <a href="guinot.html">Guinot Behandlungen</a>
+      <a href="koerper.html">Körper</a>
+      <a href="preisliste.html">Preisliste</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Öffnungszeiten</div>
+      <p>Mo–Fr 08:00–17:00 Uhr</p>
+      <p>Fr 08:00–13:00 Uhr</p>
+      <p>Behandlungen nach Vereinbarung</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Kontakt</div>
+      <p>Talheimer Str. 32, 74223 Flein</p>
+      <a href="tel:+4971316187070">07131 / 6187070</a>
+      <a href="mailto:info@schiefer-kosmetik.de">info@schiefer-kosmetik.de</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Schiefer Kosmetik e.K. · Talheimer Str. 32, 74223 Flein bei Heilbronn</span>
+    <div style="display:flex;gap:16px;"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </div>
+</footer>
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('show'),i*80); });
+}, {threshold:0.06});
+document.querySelectorAll('.up').forEach(el => obs.observe(el));
+
+const wd = document.getElementById('wd');
+if(wd){ const t=new Date();t.setDate(t.getDate()+1);wd.value=t.toISOString().split('T')[0]; }
+const form = document.getElementById('cForm');
+if(form) form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = form.querySelector('.f-submit');
+  const msg = document.getElementById('fMsg');
+  btn.textContent='Wird gesendet...';btn.style.opacity='0.7';
+  try {
+    const res = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){msg.style.cssText='display:block;color:#2d6a2d;background:#f0f8f0;border-radius:8px;padding:12px;';msg.textContent='✓ Vielen Dank! Wir melden uns bald.';form.reset();}
+    else throw new Error();
+  }catch{msg.style.cssText='display:block;color:#8b2635;background:#fdf0f0;border-radius:8px;padding:12px;';msg.textContent='✗ Fehler. Bitte rufen Sie uns an: 07131 / 6187070';}
+  btn.textContent='Termin anfragen';btn.style.opacity='1';
+});
+
+</script>
+</body>
+</html>
